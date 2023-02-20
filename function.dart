@@ -1,7 +1,7 @@
 String sayHello(
-        {required String name, required int age, required String country}) =>
-    "Hellow $name. your age is $age, and you come from $country";
+        {required String name, required String country, required int age}) =>
+    'Hi my name is $name, i\'m from $country and $age years old';
 
 void main(List<String> args) {
-  print(sayHello(age: 25, country: 'korea', name: 'woojin'));
+  print(sayHello(name: 'woojin', country: 'korea', age: 25));
 }
