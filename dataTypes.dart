@@ -7,4 +7,8 @@ void main() {
   // parent class
   num x = 12;
   x = 1.2;
+
+  var level = 3;
+
+  level = 1;
 }

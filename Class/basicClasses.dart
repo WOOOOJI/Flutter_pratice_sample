@@ -1,7 +1,12 @@
+enum Team { red, blue }
+
+enum XPLevel { beginner, medium, expert }
+
 class Player {
-  final String name;
-  int xp, age;
-  String team;
+  String name;
+  int age;
+  Team team;
+  XPLevel xp;
 
   Player({
     required this.name,
@@ -15,14 +20,14 @@ class Player {
     required int age,
   })  : this.age = age,
         this.name = name,
-        this.team = 'blue',
-        this.xp = 0;
+        this.team = Team.blue,
+        this.xp = XPLevel.beginner;
 
   Player.createRedPlayer(String name, int age)
       : this.age = age,
         this.name = name,
-        this.team = 'red',
-        this.xp = 0;
+        this.team = Team.red,
+        this.xp = XPLevel.expert;
 
   void sayHello() {
     print('my name is $name');
@@ -30,15 +35,10 @@ class Player {
 }
 
 void main(List<String> args) {
-  var player = Player.createBluePlayer(
-    name: 'woojin',
-    age: 25,
-  );
-
-  var player2 = Player.createRedPlayer(
-    'woojin',
-    25,
-  );
-
-  player.sayHello();
+  // cascade operator
+  var wooj = Player(name: 'woojin', xp: XPLevel.medium, team: Team.red, age: 25)
+    ..name = 'wooj'
+    ..xp = XPLevel.expert
+    ..team = Team.blue
+    ..sayHello();
 }
